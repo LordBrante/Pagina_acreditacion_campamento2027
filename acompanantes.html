@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompañantes | Elegidos ICEC Juvenil</title>
+
+    <!-- Archivo de estilos -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Encabezado y menú principal -->
+     <header class="encabezado">
+
+        <a href="index.html" class="marca">
+            <img 
+                src="Logos/logo-elegidos.png" alt="Logo Elegidos ICEC Juvenil">
+                <span>Elegidos ICEC Juvenil</span>
+        </a>
+
+        <nav
+            class="menu-principal"
+            aria-label="Navegación principal">
+
+            <a href="index.html">Inicio</a>
+            <a href="informacion.html#informacion">
+                Información
+            </a>
+
+            <a
+                href="acreditacion.html"
+                aria-current="page">
+                Acreditación
+            </a>
+
+            <a href="contacto.html#contacto">
+                Contacto
+            </a>
+        </nav>
+
+    </header>
+
+    <!-- Contenido principal de acompañantes -->
+    <main class="contenido-acreditacion">
+
+        <section class="acreditacion">
+
+            <!-- Presentación de la página -->
+            <div class="cabecera-formulario">
+
+                <h1>Agregar acompañantes</h1>
+
+                <p>
+                    Completa los datos de cada acompañante
+                    por separado.
+                </p>
+
+                <p>
+                    Cuando guardes un acompañante podrás
+                    agregar otro o continuar al resumen.
+                </p>
+
+                <a href="acreditacion.html">
+                    Volver a mis datos
+                </a>
+
+            </div>
+
+            <!-- Acompañantes guardados -->
+            <section
+                class="grupo-formulario"
+                aria-labelledby="titulo-acompanantes-guardados">
+
+                <h2 id="titulo-acompanantes-guardados">
+                    Acompañantes agregados
+                </h2>
+
+                <div id="lista-acompanantes-guardados">
+
+                    <p id="mensaje-sin-acompanantes">
+                        Todavía no has agregado acompañantes.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- Formulario de un acompañante -->
+            <form
+                id="formulario-acompanante"
+                class="formulario-acreditacion">
+
+                <!-- Datos personales del acompañante -->
+            <fieldset class="grupo-formulario">
+
+                <legend>Datos personales del acompañante</legend>
+
+            <div class="campos-grid">
+
+            <div class="campo">
+                <label for="nombre-acompanante">
+                    Nombre completo
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre-acompanante"
+                    name="nombre"
+                    autocomplete="name"
+                    required>
+            </div>
+
+            <div class="campo">
+                <label for="rut-acompanante">
+                    RUT
+                </label>
+
+                <input
+                    type="text"
+                    id="rut-acompanante"
+                    name="rut"
+                    class="rut-acompanante"
+                    placeholder="12.345.678-9"
+                    required>
+            </div>
+
+            <div class="campo">
+                <label for="fecha-acompanante">
+                    Fecha de nacimiento
+                </label>
+
+                <input
+                    type="date"
+                    id="fecha-acompanante"
+                    name="fechaNacimiento"
+                    class="fecha-acompanante"
+                    max="2027-01-08"
+                    autocomplete="bday"
+                    required>
+                </div>
+
+            <div class="campo">
+                <label for="telefono-acompanante">
+                    Teléfono
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefono-acompanante"
+                    name="telefono"
+                    autocomplete="tel"
+                    placeholder="+56 9 1234 5678"
+                    required>
+            </div>
+
+            <div class="campo">
+                <label for="correo-acompanante">
+                    Correo electrónico (opcional)
+                </label>
+
+                <input
+                    type="email"
+                    id="correo-acompanante"
+                    name="correo"
+                    class="correo-acompanante"
+                    autocomplete="email"
+                    placeholder="correo@ejemplo.cl">
+
+                <small>
+                    Debe ser un correo personal.
+                    Si no tiene uno, puede dejarlo vacío.
+                </small>
+            </div>
+
+            <div class="campo campo-valor-acreditacion">
+                <label for="valor-acompanante">
+                    Valor de acreditación
+                </label>
+
+            <output id="valor-acompanante">
+                Seleccione la fecha de nacimiento
+            </output>
+        </div>
+
+    </div>
+
+</fieldset>
+
+                <!-- Aquí agregaremos la información de salud -->
+                 <fieldset class="grupo-formulario">
+
+                    <legend>Información de salud</legend>
+
+            <div class="campos-grid">
+
+            <div class="campo">
+                <label for="tiene-alergias-acompanante">
+                    ¿Tiene algún tipo de alergia?
+                </label>
+
+            <select
+                id="tiene-alergias-acompanante"
+                name="tieneAlergias"
+                class="pregunta-salud-acompanante"
+                data-campo="campo-detalle-alergias-acompanante"
+                data-entrada="detalle-alergias-acompanante"
+                required>
+
+                <option value="">Seleccione una opción</option>
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+            </select>
+        </div>
+
+        <div
+            class="campo"
+            id="campo-detalle-alergias-acompanante"
+            hidden>
+
+            <label for="detalle-alergias-acompanante">
+                Escriba sus alergias
+            </label>
+
+            <input
+                type="text"
+                id="detalle-alergias-acompanante"
+                name="detalleAlergias"
+                placeholder="Ejemplo: penicilina o frutos secos">
+        </div>
+
+        <div class="campo">
+            <label for="tiene-enfermedad-acompanante">
+                ¿Tiene alguna enfermedad o condición médica?
+            </label>
+
+            <select
+                id="tiene-enfermedad-acompanante"
+                name="tieneEnfermedad"
+                class="pregunta-salud-acompanante"
+                data-campo="campo-detalle-enfermedad-acompanante"
+                data-entrada="detalle-enfermedad-acompanante"
+                required>
+
+                <option value="">Seleccione una opción</option>
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+            </select>
+        </div>
+
+        <div
+            class="campo"
+            id="campo-detalle-enfermedad-acompanante"
+            hidden>
+
+            <label for="detalle-enfermedad-acompanante">
+                Indique cuál
+            </label>
+
+            <input
+                type="text"
+                id="detalle-enfermedad-acompanante"
+                name="detalleEnfermedad"
+                placeholder="Describa la condición médica">
+        </div>
+
+        <div class="campo">
+            <label for="toma-medicamentos-acompanante">
+                ¿Toma medicamentos?
+            </label>
+
+            <select
+                id="toma-medicamentos-acompanante"
+                name="tomaMedicamentos"
+                class="pregunta-salud-acompanante"
+                data-campo="campo-detalle-medicamentos-acompanante"
+                data-entrada="detalle-medicamentos-acompanante"
+                required>
+
+                <option value="">Seleccione una opción</option>
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+            </select>
+        </div>
+
+        <div
+            class="campo"
+            id="campo-detalle-medicamentos-acompanante"
+            hidden>
+
+            <label for="detalle-medicamentos-acompanante">
+                Medicamento, dosis y horario
+            </label>
+
+            <input
+                type="text"
+                id="detalle-medicamentos-acompanante"
+                name="detalleMedicamentos"
+                placeholder="Nombre, dosis y horario">
+        </div>
+
+        <div class="campo">
+            <label for="restriccion-alimentaria-acompanante">
+                ¿Tiene alguna restricción alimentaria?
+            </label>
+
+            <select
+                id="restriccion-alimentaria-acompanante"
+                name="restriccionAlimentaria"
+                class="pregunta-salud-acompanante"
+                data-campo="campo-detalle-alimentacion-acompanante"
+                data-entrada="detalle-alimentacion-acompanante"
+                required>
+
+                <option value="">Seleccione una opción</option>
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+            </select>
+        </div>
+
+        <div
+            class="campo"
+            id="campo-detalle-alimentacion-acompanante"
+            hidden>
+
+            <label for="detalle-alimentacion-acompanante">
+                Indique cuál
+            </label>
+
+            <input
+                type="text"
+                id="detalle-alimentacion-acompanante"
+                name="detalleAlimentacion"
+                placeholder="Ejemplo: sin gluten o sin lactosa">
+        </div>
+
+    </div>
+
+</fieldset>
+
+                <!-- Aquí agregaremos el contacto de emergencia -->
+
+                <fieldset class="grupo-formulario">
+
+    <legend>Contacto de emergencia</legend>
+
+    <div class="campos-grid">
+
+        <div class="campo">
+            <label for="nombre-emergencia-acompanante">
+                Nombre completo del contacto
+            </label>
+
+            <input
+                type="text"
+                id="nombre-emergencia-acompanante"
+                name="nombreEmergencia"
+                required>
+        </div>
+
+        <div class="campo">
+            <label for="relacion-emergencia-acompanante">
+                Parentesco o relación
+            </label>
+
+            <input
+                type="text"
+                id="relacion-emergencia-acompanante"
+                name="relacionEmergencia"
+                placeholder="Ejemplo: madre, padre o tutor"
+                required>
+        </div>
+
+        <div class="campo">
+            <label for="telefono-emergencia-acompanante">
+                Teléfono principal
+            </label>
+
+            <input
+                type="tel"
+                id="telefono-emergencia-acompanante"
+                name="telefonoEmergencia"
+                placeholder="+56 9 1234 5678"
+                required>
+        </div>
+
+        <div class="campo">
+            <label for="telefono-alternativo-acompanante">
+                Teléfono alternativo
+            </label>
+
+            <input
+                type="tel"
+                id="telefono-alternativo-acompanante"
+                name="telefonoAlternativo"
+                placeholder="+56 9 1234 5678">
+        </div>
+
+    </div>
+
+</fieldset>
+
+        <!-- Guarda el acompañante ingresado -->
+        <div class="confirmacion-formulario">
+
+            <button
+            type="submit"
+            id="guardar-acompanante"
+            class="boton boton-guardar">
+
+                Guardar acompañante
+            </button>
+
+        </div>
+
+            </form>
+
+            <!-- Navegación del proceso -->
+            <div class="confirmacion-formulario">
+
+                <button
+                    type="button"
+                    id="continuar-resumen"
+                    class="boton boton-guardar">
+
+                    Continuar al resumen y pago
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Funciones de la página de acompañantes -->
+    <script src="acompanantes.js"></script>
+
+</body>
+
+</html>
+        </a>
+     </header>
+</body>
+</html>
+

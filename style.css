@@ -6,6 +6,9 @@
     --crema: #f7ecd4;
     --blanco: #ffffff;
     --texto: #25251f;
+    --color-eliminar-hover: #7a3623;
+    --color-fondo-tarjeta: #fffdf8;
+
 }
 
 /* Elimina los espacios automáticos del navegador*/
@@ -535,4 +538,89 @@ main{
 .contador-campamento strong{
    color: #f2b84b;
     font-size: 1.3rem;
+}
+
+/* boton para agregar participantes*/
+.boton-agregar {
+    border: 0;
+    border-radius: 12px;
+    background-color: var(--verde-bosque);
+    color: var(--blanco);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    margin-top: 12px;
+    padding: 13px 20px;
+}
+
+.boton-agregar:hover {
+    background-color: var(--cafe-tierra);
+}
+
+/*tarjeta creada para el acompañante*/
+.tarjeta-acompanante{
+    border: 2px solid var(--verde-bosque);
+    border-radius: 16px;
+    background-color: var(--color-fondo-tarjeta);
+    margin-top: 24px;
+    padding: 24px;
+}
+.encabezado-acompanante {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.encabezado-acompanante h3 {
+    color: var(--verde-bosque);
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+/*Secciones internas del acompañante*/
+.subgrupo-acompanante {
+    border: 1px solid var(--verde-bosque);
+    border-radius: 12px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.subgrupo-acompanante legend {
+    color: var(--verde-bosque);
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0 10px;
+}
+
+/*Boton para eliminar un acompañante*/
+.boton-eliminar-acompanante {
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--cafe-tierra);
+    color: var(--blanco);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    padding: 10px 16px;
+}
+
+.boton-eliminar-acompanante:hover {
+    background-color: var(--color-eliminar-hover) ;
+}
+
+@media (max-width: 520px) {
+    .tarjeta-acompanante {
+        padding: 16px;
+    }
+
+    .encabezado-acompanante{
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .boton-eliminar-acompanante{
+        width: 100%;
+    }
 }
